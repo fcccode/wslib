@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Client</title>
+    <script>
+      function connect() {
+        var socket = new WebSocket('ws://localhost:8000');
+        socket.addEventListener('open', function(event) {
+          console.log('WebSocket opened!');
+        });
+        socket.addEventListener('error', function(event) {
+          alert('Could not connect', error);
+        });
+        socket.addEventListener('message', function(event) {
+          console.log('WebSocket message:', event);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" onclick="connect()">Connect</button>
+  </body>
+</html>
